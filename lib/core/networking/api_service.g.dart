@@ -24,13 +24,13 @@ class _ApiService implements ApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
+  Future<LoginResponseModel> login(LoginRequestModel loginRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(loginRequestBody.toJson());
-    final _options = _setStreamType<LoginResponse>(Options(
+    final _options = _setStreamType<LoginResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -47,9 +47,9 @@ class _ApiService implements ApiService {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late LoginResponse _value;
+    late LoginResponseModel _value;
     try {
-      _value = LoginResponse.fromJson(_result.data!);
+      _value = LoginResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -58,13 +58,14 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<SignupResponse> signup(SignupRequestBody signupRequestBody) async {
+  Future<SignupResponseModel> signup(
+      SignupRequestModel signupRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(signupRequestBody.toJson());
-    final _options = _setStreamType<SignupResponse>(Options(
+    final _options = _setStreamType<SignupResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -81,9 +82,9 @@ class _ApiService implements ApiService {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SignupResponse _value;
+    late SignupResponseModel _value;
     try {
-      _value = SignupResponse.fromJson(_result.data!);
+      _value = SignupResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

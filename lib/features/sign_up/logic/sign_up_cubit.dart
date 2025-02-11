@@ -4,7 +4,7 @@ import 'package:flutter_complete_project/core/networking/api_error_model.dart';
 import 'package:flutter_complete_project/features/sign_up/data/repos/sign_up_repo.dart';
 import 'package:flutter_complete_project/features/sign_up/logic/sign_up_state.dart';
 
-import '../data/models/sign_up_request_body.dart';
+import '../data/models/sign_up_request_model.dart';
 
 class SignupCubit extends Cubit<SignupState> {
   final SignupRepo _signupRepo;
@@ -21,7 +21,7 @@ class SignupCubit extends Cubit<SignupState> {
   void emitSignupStates() async {
     emit(const SignupState.signupLoading());
     final response = await _signupRepo.signup(
-      SignupRequestBody(
+      SignupRequestModel(
         name: nameController.text,
         email: emailController.text,
         phone: phoneController.text,

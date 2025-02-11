@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up_request_body.dart';
+part of 'sign_up_request_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignupRequestBody _$SignupRequestBodyFromJson(Map<String, dynamic> json) =>
-    SignupRequestBody(
+SignupRequestModel _$SignupRequestModelFromJson(Map<String, dynamic> json) =>
+    SignupRequestModel(
       name: json['name'] as String,
       email: json['email'] as String,
       phone: json['phone'] as String,
@@ -16,7 +16,7 @@ SignupRequestBody _$SignupRequestBodyFromJson(Map<String, dynamic> json) =>
       gender: (json['gender'] as num).toInt(),
     );
 
-Map<String, dynamic> _$SignupRequestBodyToJson(SignupRequestBody instance) =>
+Map<String, dynamic> _$SignupRequestModelToJson(SignupRequestModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
