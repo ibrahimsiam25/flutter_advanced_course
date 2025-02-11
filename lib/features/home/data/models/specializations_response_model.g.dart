@@ -24,7 +24,7 @@ Map<String, dynamic> _$SpecializationsResponseModelToJson(
 
 SpecializationsData _$SpecializationsDataFromJson(Map<String, dynamic> json) =>
     SpecializationsData(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       doctorsList: (json['doctors'] as List<dynamic>?)
           ?.map((e) =>
@@ -41,13 +41,13 @@ Map<String, dynamic> _$SpecializationsDataToJson(
     };
 
 Doctors _$DoctorsFromJson(Map<String, dynamic> json) => Doctors(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       email: json['email'] as String?,
       phone: json['phone'] as String?,
       photo: json['photo'] as String?,
       gender: json['gender'] as String?,
-      price: json['appoint_price'] as int?,
+      price: (json['appoint_price'] as num?)?.toInt(),
       degree: json['degree'] as String,
     );
 
